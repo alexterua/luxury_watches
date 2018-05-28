@@ -17,7 +17,7 @@ define("CONF", ROOT . '/config'); // Конфигурационный файл
 define("LAYOUT", 'default'); // Шаблон сайта по умолчанию
 
 // http(s)://shop.loc/public/index.php
-if (!empty($_SERVER['HTTPS'])) {
+if (!empty($_SERVER['HTTPS'] && 'off' !== strtolower($_SERVER['HTTPS']))) {
     $app_path = "https://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}";
 } else {
     $app_path = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}";
