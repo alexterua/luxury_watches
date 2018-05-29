@@ -9,8 +9,11 @@
 require_once dirname(__DIR__) . '/config/init.php';
 // Подключение пользовательских функций
 require_once LIBS . '/functions.php';
+require_once CONF . '/routes.php';
 
 new \shop\App();
+
+//debug(\shop\Router::getRoutes());
 
 //throw new Exception('Страница не найдена!!!', 500);
 
