@@ -9,20 +9,19 @@
 namespace app\controllers;
 
 
+use RedBeanPHP\R;
 use shop\App;
 
 class MainController extends AppController {
 
-    //public $layout = 'test';
-
     public function indexAction() {
-        //$this->layout = 'test';
-        //echo __METHOD__;
+        $posts = R::findAll('test');
+        $post = R::findOne('test', 'id = ?', [2]);
         $this->setMeta(App::$app->getProperty('shop_name'), 'Описание...', 'Ключевые слова...');
         $name = 'Alex';
         $age = 31;
         $names = ['John', 'Eric', 'Jane'];
         //$this->set(['name' => 'Alex', 'age' => 31]);
-        $this->set(compact('name', 'age', 'names'));
+        $this->set(compact('name', 'age', 'names', 'posts'));
     }
 }
