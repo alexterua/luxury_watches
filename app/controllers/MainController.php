@@ -11,6 +11,7 @@ namespace app\controllers;
 
 use RedBeanPHP\R;
 use shop\App;
+use shop\Cache;
 
 class MainController extends AppController {
 
@@ -20,7 +21,15 @@ class MainController extends AppController {
         $this->setMeta(App::$app->getProperty('shop_name'), 'Описание...', 'Ключевые слова...');
         $name = 'Alex';
         $age = 31;
-        $names = ['John', 'Eric', 'Jane'];
+        $names = ['John', 'Eric', 'Jane', 'Mike'];
+        $cache = Cache::instance();
+        //$cache->set('test', $names);
+        //$cache->delete('test');
+        $data = $cache->get('test');
+        if (!$data) {
+            $cache->set('test', $names);
+        }
+        debug($data);
         //$this->set(['name' => 'Alex', 'age' => 31]);
         $this->set(compact('name', 'age', 'names', 'posts'));
     }
