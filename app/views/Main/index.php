@@ -61,7 +61,7 @@
                         </div>
                         <?php if ($hit->old_price): ?>
                         <div class="srch">
-                            <span><?=$hit->price * 100 / $hit->old_price; ?>(-50%)</span>
+                            <span><?=round(($hit->old_price - $hit->price) * 100 / $hit->old_price); ?> %</span>
                         </div>
                         <?php endif; ?>
                     </div>
