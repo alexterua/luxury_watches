@@ -14,7 +14,7 @@ define("CORE", ROOT . '/vendor/shop/core'); // Папка ядра прилож�
 define("LIBS", ROOT . '/vendor/shop/core/libs'); // Папка библиотек приложения
 define("CACHE", ROOT . '/tmp/cache'); // Папка кэша
 define("CONF", ROOT . '/config'); // Конфигурационный файл
-define("LAYOUT", 'default'); // Шаблон сайта по умолчанию
+define("LAYOUT", 'watches'); // Шаблон сайта по умолчанию
 
 // http(s)://shop.loc/public/index.php
 if (!empty($_SERVER['HTTPS'] && 'off' !== strtolower($_SERVER['HTTPS']))) {
